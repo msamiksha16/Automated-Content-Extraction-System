@@ -1,0 +1,12 @@
+flask
+torch
+transformers
+faster-whisper
+whisper
+yt-dlp
+webvtt-py
+nltk
+rouge-score
+word2number
+sentence-transformers
+gunicorn
