@@ -28,10 +28,8 @@ The Math Video Summarizer is an innovative web application designed to help stud
 ## 🛠️ Technologies Used
 
 * **Frontend**:
-    * HTML5
-    * CSS3 (with Bootstrap 5 for responsiveness and styling)
-    * JavaScript
-    * MathJax (for rendering LaTeX math formulas)
+    * React and Vite
+    * Responsive CSS and Lucide icons
 * **Backend**:
     * Flask (Python web framework)
     * `yt-dlp`: For downloading YouTube video information and subtitles/audio.
@@ -70,6 +68,13 @@ The Math Video Summarizer is an innovative web application designed to help stud
     ```bash
     pip install -r requirements.txt
     ```
+
+4.  **Install and build the React frontend:**
+
+    ```bash
+    npm install
+    npm run build
+    ```
     *(Create a `requirements.txt` file with the following content if you don't have one):*
     ```
     Flask
@@ -85,15 +90,17 @@ The Math Video Summarizer is an innovative web application designed to help stud
     ```
     *Note: For `torch`, consider installing the correct version for your system (with or without CUDA) from [pytorch.org](https://pytorch.org/get-started/locally/). If you face issues with `whisper` or `faster-whisper`, refer to their respective GitHub pages for specific installation instructions.*
 
-4.  **Run the Flask application:**
+5.  **Run the Flask application:**
 
     ```bash
     python app.py
     ```
 
-5.  **Access the application:**
+6.  **Access the application:**
 
     Open your web browser and go to `http://127.0.0.1:5000/`.
+
+For frontend development with hot reload, run `npm run dev` in a second terminal while Flask is running at `http://127.0.0.1:5000`.
 
 ## 📂 Project Structure
 ```
