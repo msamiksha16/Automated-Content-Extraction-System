@@ -1,3 +1,11 @@
+FROM node:20-alpine AS frontend-builder
+WORKDIR /frontend
+COPY package.json .
+RUN npm install
+COPY vite.config.js .
+COPY frontend ./frontend
+RUN npm run build
+
 # Use an official Python runtime as a parent image
 FROM pytorch/pytorch:2.2.0-cuda11.8-cudnn8-runtime
 
@@ -23,6 +31,7 @@ RUN mkdir -p /app/hf_models
 
 # Copy the rest of the application code
 COPY . .
+COPY --from=frontend-builder /frontend/frontend/dist ./frontend/dist
 
 # Expose port (Flask default is 5000, but Azure uses 8000 by default)
 EXPOSE 8000
